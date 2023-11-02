@@ -1,0 +1,41 @@
+﻿@model MAS_2.Models.MateracLateksowy
+
+<h1>Create Mattress</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Rodzaj">Kind</label>
+        <input asp-for="Rodzaj" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cecha">Feauter</label>
+        <input asp-for="Cecha" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Wysokosc">Height</label>
+        <input asp-for="Wysokosc" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Sztywnosc">Stiffness</label>
+        <input asp-for="Sztywnosc" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Przeznaczenie">Purpose</label>
+        <input asp-for="Przeznaczenie" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cena">Price</label>
+        <input asp-for="Cena" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Type</label>
+        <select asp-for="Type" class="form-control">
+            <option value="Memory">Memory</option>
+            <option value="Siedmiostrefowy">Siedmiostrefowy</option>
+            <option value="Jednostrefowy">Jednostrefowy</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

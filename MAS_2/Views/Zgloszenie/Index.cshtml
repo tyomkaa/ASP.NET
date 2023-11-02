@@ -1,0 +1,37 @@
+﻿@model List<Zgloszenie>
+
+<h1>List of Orders</h1>
+
+<p>Liczba zgloszen: @Model.Count</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Mattress</th>
+            <th>Order Date</th>
+            <th>Delivery Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var zgloszenie in Model)
+        {
+            <tr>
+                <td>@zgloszenie.ID</td>
+                <td>@zgloszenie.Klient.Imie @zgloszenie.Klient.Nazwisko</td>
+                <td>@zgloszenie.MateracLateksowy.Rodzaj</td>
+                <td>@zgloszenie.DataZainicjalizowania.ToShortDateString()</td>
+                <td>@zgloszenie.DataZrealizowania.ToShortDateString()</td>
+                <td>@zgloszenie.Status</td>
+                <td>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = zgloszenie.ID })">Delete</a>
+                    <a class="btn btn-primary" href="@Url.Action("ChangeStatus", new { id = zgloszenie.ID })">Change Status</a>
+                    <a class="btn btn-primary" href="@Url.Action("Details", new { id = zgloszenie.ID })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

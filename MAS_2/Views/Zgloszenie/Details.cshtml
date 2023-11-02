@@ -1,0 +1,29 @@
+﻿@model Zgloszenie
+
+<h1>Order ID: @Model.ID</h1>
+
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <p><strong>Client:</strong></p>
+        <p><strong>Name:</strong> @Model.Klient.Imie</p>
+        <p><strong>Last Name:</strong> @Model.Klient.Nazwisko</p>
+        <p><strong>Email:</strong> @Model.Klient.Email</p>
+        <p><strong>Phone Number:</strong> @Model.Klient.NumerTelefonu</p>
+        <p><strong>Order Date:</strong> @Model.DataZainicjalizowania.ToShortDateString()</p>
+        <p><strong>Delivery Date:</strong> @Model.DataZrealizowania.ToShortDateString()</p>
+        <p><strong>Status:</strong> @Model.Status</p>
+    </div>
+    <div style="flex: 1;">
+        <p><strong>Mattress:</strong></p>
+        <p><strong>Kind:</strong> @Model.MateracLateksowy.Rodzaj</p>
+        <p><strong>Feature:</strong> @Model.MateracLateksowy.Cecha</p>
+        <p><strong>Height:</strong> @Model.MateracLateksowy.Wysokosc</p>
+        <p><strong>Stiffness:</strong> @Model.MateracLateksowy.Sztywnosc</p>
+        <p><strong>Purpose:</strong> @Model.MateracLateksowy.Przeznaczenie</p>
+        <p><strong>Price:</strong> @Model.MateracLateksowy.Cena</p>
+        <p><strong>Gross:</strong> @Model.MateracLateksowy.Brutto</p>
+        <p><strong>Type:</strong> @Model.MateracLateksowy.Type</p>
+    </div>
+</div>
+
+<a class="btn btn-primary" href="@Url.Action("Index")">Back to Orders</a>

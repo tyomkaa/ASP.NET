@@ -1,0 +1,43 @@
+﻿@model List<MAS_2.Models.MateracLateksowy>
+
+<h1>List of Mattresses</h1>
+
+<p>Liczba materaców: @Model.Count</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kind</th>
+            <th>Feature</th>
+            <th>Height</th>
+            <th>Stiffness</th>
+            <th>Purpose</th>
+            <th>Price</th>
+            <th>Gross</th>
+            <th>Type</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var materac in Model)
+        {
+            <tr>
+                <td>@materac.ID</td>
+                <td>@materac.Rodzaj</td>
+                <td>@materac.Cecha</td>
+                <td>@materac.Wysokosc</td>
+                <td>@materac.Sztywnosc</td>
+                <td>@materac.Przeznaczenie</td>
+                <td>@materac.Cena</td>
+                <td>@materac.Brutto</td>
+                <td>@materac.Type</td>
+                <td>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = materac.ID })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New</a>

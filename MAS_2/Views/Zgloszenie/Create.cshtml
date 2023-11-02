@@ -1,0 +1,28 @@
+﻿@model Zgloszenie
+@{
+    ViewData["Title"] = "Create Order";
+}
+
+<h1>Create Order</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label for="klientID">Client:</label>
+        <select class="form-control" id="klientID" name="klientID">
+            @foreach (var klient in ViewBag.Klienci)
+            {
+                <option value="@klient.ID">@klient.Imie @klient.Nazwisko</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="materacID">Mattress:</label>
+        <select class="form-control" id="materacID" name="materacID">
+            @foreach (var materac in ViewBag.Materace)
+            {
+                <option value="@materac.ID">@materac.Rodzaj</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

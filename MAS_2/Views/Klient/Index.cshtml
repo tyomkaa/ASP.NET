@@ -1,0 +1,37 @@
+﻿@model List<Klient>
+
+<h1>Clients</h1>
+
+<p>Liczba klientów: @Model.Count</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var klient in Model)
+        {
+            <tr>
+                <td>@klient.ID</td>
+                <td>@klient.Imie</td>
+                <td>@klient.Nazwisko</td>
+                <td>@klient.Email</td>
+                <td>@klient.NumerTelefonu</td>
+                <td>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = klient.ID })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>

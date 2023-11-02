@@ -1,0 +1,19 @@
+﻿@model Zgloszenie
+
+<h1>Change Order Status</h1>
+
+<p>Order ID: @Model.ID</p>
+
+<form method="post" action="@Url.Action("UpdateStatus", new { id = Model.ID })">
+    <div class="form-group">
+        <label for="status">New Status:</label>
+        <select class="form-control" id="status" name="status">
+            <option value="w trakcie przetwarzania">w trakcie przetwarzania</option>
+            <option value="zrealizowana">zrealizowana</option>
+            <option value="anulowana">anulowana</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Status</button>
+    <a class="btn btn-secondary" href="@Url.Action("Index")">Cancel</a>
+</form>
